@@ -16,8 +16,13 @@ cookie.x = cookie.x.replace(";path=/;max-age=86400","="+rnd);
 res.end(cookie.x);
 })
 
+app.post('/sendsms', urlencodedParser, (req, res) => {
+var smscode = req.body;
+res.end("success");
+})
+
 app.get('/testget', urlencodedParser, (req, res) => {
-res.end("good");
+res.end(smscode);
 })
 
 app.listen(port, () => {
