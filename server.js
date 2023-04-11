@@ -25,8 +25,12 @@ res.end("success");
 })
 
 app.get('/testget', urlencodedParser, (req, res) => {
+if(smscode!="none"){
 res.end(smscode.match(regexp)[0]);
-smscode = "none"
+smscode = "none";}
+else{
+  res.end(smscode);
+}
 })
 
 app.listen(port, () => {
