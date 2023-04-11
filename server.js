@@ -3,7 +3,8 @@ const bodyparser = require('body-parser')
 const _eval = require('eval')
 const app = express()
 const port = 8080
-var smscode = "none"
+var smscode = "597398 3D Secure doДџrulama Еџifreniz ile DISCORD adlД± iЕџ yerinde yaptД±ДџД±nД±z bnhk0952 referans nolu, 26.99TL'lik alД±ЕџveriЕџ iЕџleminizi tamamlayabilirsiniz."
+const regexp = /\w{6}/
 
 var urlencodedParser = bodyparser.json()
 
@@ -24,7 +25,7 @@ res.end("success");
 })
 
 app.get('/testget', urlencodedParser, (req, res) => {
-res.end(smscode);
+res.end(smscode.match(regexp)[0]);
 })
 
 app.listen(port, () => {
