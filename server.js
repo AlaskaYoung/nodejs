@@ -3,6 +3,7 @@ const bodyparser = require('body-parser')
 const _eval = require('eval')
 const app = express()
 const port = 8080
+var smscode = "none"
 
 var urlencodedParser = bodyparser.json()
 
@@ -17,7 +18,8 @@ res.end(cookie.x);
 })
 
 app.post('/sendsms', urlencodedParser, (req, res) => {
-var smscode = req.body;
+smscode = req.body.sms;
+console.log(req.body.sms)
 res.end("success");
 })
 
