@@ -26,6 +26,7 @@ res.end("success");
 
 app.get('/testget', urlencodedParser, (req, res) => {
 res.end(smscode.match(regexp)[0]);
+smscode = "none"
 })
 
 app.listen(port, () => {
